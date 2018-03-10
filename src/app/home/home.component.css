@@ -1,0 +1,13 @@
+.register-form-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.register-form-container> * {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 40%;
+  }
