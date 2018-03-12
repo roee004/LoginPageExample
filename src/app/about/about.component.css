@@ -1,0 +1,7 @@
+.aboutContainer {
+
+}
+
+.aboutContainer > * {
+    padding-left: 3% ;
+}

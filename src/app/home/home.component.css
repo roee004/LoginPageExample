@@ -11,3 +11,16 @@
     margin-top: 2%;
     width: 40%;
   }
+
+.snack-bar-error {
+    background-color: rgb(201, 83, 83)
+}
+
+.snack-bar-welcome {
+    background-color: #00ff7f;
+    color: orange;
+  }
+  
+.snack-bar-welcome > button {
+        color: orange;
+}

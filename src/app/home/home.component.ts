@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
     Validators.email,
   ]);
 
+  passwordFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+
   matcher = new MyErrorStateMatcher();
   showPasswordChecked = false;
 
@@ -29,19 +33,15 @@ export class HomeComponent implements OnInit {
       this.forms = res;
       this.formsCount = res.length;
     });
-
-    // this.snackBar.openFromComponent(HomeComponent, {
-    //   duration: 500,
-    // });
   }
 
   signIn(f: NgForm) {
     console.log('user submited');
 
-    if (f.errors == null) {
-        this.snackBar.open('invalid input', null, { duration: 1000});
+    if (f.valid && this.emailFormControl.valid && this.passwordFormControl.valid) {
+      this.snackBar.open('Great to have you', null, { duration: 1000, panelClass: ['snack-bar-welcome']});
     } else {
-      this.snackBar.open('Great to have you', null, { duration: 1000});
+      this.snackBar.open('invalid input', null, { duration: 1000, panelClass: ['snack-bar-error']});
     }
   }
 }
